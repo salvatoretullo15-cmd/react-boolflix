@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import menu from "../data/menu"
 
 export default function AppHeader() {
+
     return(
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -15,10 +16,6 @@ export default function AppHeader() {
                             {menu.map(item=> <NavLink className="nav-link" to={item.path} key={item.id} > {item.text}
                             </NavLink>)}
                         </ul>
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
                     </div>
                 </div>
             </nav>
