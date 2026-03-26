@@ -21,11 +21,11 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout/>}>
             <Route path="/" element={<Home/>}/>
-            <Route path="/Serie tv" element={<SerieTv/>}/>
+            <Route path="/SerieTv" element={<SerieTv/>}/>
             <Route path="/Film" element={<Film/>}/>
             <Route path="/Originali" element={<Originali/>}/>
-            <Route path="/Aggiunti di recente" element={<AggiuntiDiRecente/>}/>
-            <Route path="/La mia lista" element={<LaMiaLista/>}/>
+            <Route path="/AggiuntiDiRecente" element={<AggiuntiDiRecente/>}/>
+            <Route path="/LaMiaLista" element={<LaMiaLista/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
