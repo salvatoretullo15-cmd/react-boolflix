@@ -26,7 +26,21 @@ export default function Film() {
 
     return(
         <>
-            
+            {/*implementazione del form di ricerca con utilizzo del ciclo map*/}
+            <form role="search" onSubmit={handleSearch}>           
+                <input type="text" value={searchFilm} onChange={(e) => setSearchFilm(e.target.value)} placeholder="Cerca un film..."/>
+                    <button type="submit">Cerca</button>
+                        <ul>
+                            {movies.map(movie => (
+                                <li key={movie.id}>
+                                    <h3>{movie.title}</h3>
+                                    <p>Titolo originale: {movie.original_title}</p>
+                                    <p>Lingua: {movie.original_language}</p>
+                                    <p>Voto: {movie.vote_average}</p>
+                                </li>
+                            ))}
+                        </ul>
+            </form>
         </>
     )
 }
