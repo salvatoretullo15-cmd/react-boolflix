@@ -1,4 +1,4 @@
-export default function AppFooter() {
+export default function Originali() {
     return(
         <>
         </>
