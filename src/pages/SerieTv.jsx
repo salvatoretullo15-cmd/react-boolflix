@@ -21,22 +21,28 @@ export default function SerieTv() {
     }    
         
     return(
-        <div className='bg'>
-            <form role="search" onSubmit={handleSearch}>           
-                <input type="text" value={searchTv} onChange={(e) => setSearchTv(e.target.value)} placeholder="Cerca un serie tv..."/>
-                    <button type="submit">Cerca</button>
-                        <ul>
-                            {tv.map(tv => (
-                                <li key={tv.id}>
-                                    <img src={tv.poster_path ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt="locandina"/>
-                                    <h3>{tv.name}</h3>
-                                    <p>Titolo originale: {tv.original_title}</p>
-                                    <p>Lingua: {tv.original_language}</p>
-                                    <p>Voto: {tv.vote_average}</p>
-                                </li>
-                            ))}
-                        </ul>
+        <div className='text-center'>
+            <form className="bg-black border border-black" role="search" onSubmit={handleSearch}>           
+                <input className="ms-3 mt-3 mb-3" type="text" value={searchTv} onChange={(e) => setSearchTv(e.target.value)} placeholder="Cerca un serie tv..."/>
+                <button className="btn btn-dark ms-2" type="submit">Cerca</button>
             </form>
+                <div className='container-flex bg-danger'>
+                    <div className='row row-cols-sm-2 row-cols-md-5 g-4'>
+                        {tv.map(tv => (
+                            <div className="col" key={tv.id}>
+                                <div className='card h-100 bg-black'>
+                                    <img src={tv.poster_path ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt="locandina"/>
+                                    <div class="card-body text-white">
+                                        <h3>{tv.name}</h3>
+                                        <p>Titolo originale: {tv.original_title}</p>
+                                        <p>Lingua: {tv.original_language}</p>
+                                        <p>Voto: {tv.vote_average}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
         </div>
     )
 }
