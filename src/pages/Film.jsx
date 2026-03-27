@@ -1,10 +1,29 @@
 import { useState } from 'react'
+//import delle flags
+import * as Flags from 'country-flag-icons/react/3x2'
 
 export default function Film() {
 
     //creazione delle costanti per ricercare i film e salvarli
     const [searchFilm, setSearchFilm] = useState('');
     const [movies, setMovies] = useState([]);
+
+    const getFlag = (lang) => {
+        //qui creiamo una lista di eccezioni visto che la libreria usa gli stati 
+        const langToCountry = { en: 'GB', ja: 'JP', ko: 'KR', zh: 'CN', hi: 'IN' };
+        // qui diciamo di cercare nel nostro "dizionario" e se dovesse trovare la 
+        // lingua dovra usare il nostro codice altrimenti la lingua originale
+        const code = (langToCountry[lang] || lang).toUpperCase();
+        //qui va a trovare il componente che si chiama come il nostro codice
+        const FlagComponent = Flags[code];
+    
+        //qui usiamo il ternario per far due scelte 
+        return FlagComponent ? 
+            //se esiste gli mette la bandiera e le caratteristiche css impostate
+            <FlagComponent className="movie-flag"/> : 
+            //altrimenti mette un semplice span con il nome della lingua
+            <span className="lang-text">{lang.toUpperCase()}</span>;
+        }
 
     //creazione della funzione handleSearch 
     const handleSearch = (e) => {
@@ -40,7 +59,7 @@ export default function Film() {
                                     <div class='card-body text-white'>
                                         <h3 className='card-title'>{movie.title}</h3>
                                         <p className='card-text'>Titolo originale: {movie.original_title}</p>
-                                        <p className='card-text'>Lingua: {movie.original_language}</p>
+                                        <p className='card-text'>Lingua: {getFlag(movie.original_language)}</p>
                                         <p className='card-text'>Voto: {movie.vote_average}</p>
                                     </div>
                                 </div>
