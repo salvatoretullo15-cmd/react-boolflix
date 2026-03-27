@@ -40,7 +40,6 @@ export default function Film() {
             .then(data => {
                 setMovies(data.results); 
         });
-        
     }
 
     return(

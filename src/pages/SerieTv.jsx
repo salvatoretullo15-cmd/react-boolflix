@@ -28,7 +28,6 @@ export default function SerieTv() {
             .then(data => {
                 setTV(data.results); 
         });
-
     }    
 
     return(
