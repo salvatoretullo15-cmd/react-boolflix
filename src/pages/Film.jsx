@@ -25,22 +25,29 @@ export default function Film() {
     }
 
     return(
-        <>
+        <div className='bg'>
             {/*implementazione del form di ricerca con utilizzo del ciclo map*/}
             <form role="search" onSubmit={handleSearch}>           
                 <input type="text" value={searchFilm} onChange={(e) => setSearchFilm(e.target.value)} placeholder="Cerca un film..."/>
                     <button type="submit">Cerca</button>
-                        <ul>
+                    <div className="container-flex">
+                        <div className='row row-cols-sm-2 row-cols-md-5 g-4'>
                             {movies.map(movie => (
-                                <li key={movie.id}>
-                                    <h3>{movie.title}</h3>
-                                    <p>Titolo originale: {movie.original_title}</p>
-                                    <p>Lingua: {movie.original_language}</p>
-                                    <p>Voto: {movie.vote_average}</p>
-                                </li>
+                                <div className="col" key={movie.id}>
+                                  <div className='card h-100'>
+                                    <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt="locandina"/>
+                                    <div class="card-body">
+                                        <h3 className="card-title">{movie.title}</h3>
+                                        <p className="card-text">Titolo originale: {movie.original_title}</p>
+                                        <p className="card-text">Lingua: {movie.original_language}</p>
+                                        <p className="card-text">Voto: {movie.vote_average}</p>
+                                    </div>
+                                  </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
+                    </div>
             </form>
-        </>
+        </div>
     )
 }
