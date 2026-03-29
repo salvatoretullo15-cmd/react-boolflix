@@ -1,6 +1,6 @@
 import { useState } from 'react'
 //import delle flags
-import * as Flags from 'country-flag-icons/react/3x2'
+import * as Flags from 'country-flag-icons/react/3x2';
 
 export default function Film() {
 
@@ -60,6 +60,7 @@ export default function Film() {
                                         <p className='card-text'>Titolo originale: {movie.original_title}</p>
                                         <p className='card-text'>Lingua: {getFlag(movie.original_language)}</p>
                                         <p className='card-text'>Voto: {movie.vote_average}</p>
+                                        
                                     </div>
                                 </div>
                             </div>

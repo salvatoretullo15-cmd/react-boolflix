@@ -1,4 +1,5 @@
 @import url('bootstrap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 .movie-flag {
   width: 25px;
