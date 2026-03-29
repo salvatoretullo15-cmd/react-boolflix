@@ -40,12 +40,12 @@ export default function SerieTv() {
                     <div className='row row-cols-sm-2 row-cols-md-5 g-4'>
                         {tv.map(tv => (
                             <div className='col' key={tv.id}>
-                                <div className='card h-100 bg-black'>
+                                <div className='movie-card card h-100 bg-black position-relative'>
                                     <img src={tv.poster_path ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt='locandina'/>
-                                    <div className='card-body text-white'>
-                                        <h3>{tv.name}</h3>
-                                        <p>Titolo originale: {tv.original_title}</p>
-                                        <p>Lingua:{getFlag(tv.original_language)} {tv.original_language}</p>
+                                    <div className='movie-info card-img-overlay d-flex flex-column justify-content-center text-white'>
+                                        <p className='card-title'>titolo: {tv.name}</p>
+                                        <p className='card-text'>Titolo originale: {tv.original_title}</p>
+                                        <p className='card-text'>Lingua: {getFlag(tv.original_language)}</p>
                                         <p className='card-text'>
                                             Voto: 
                                                 {[1, 2, 3, 4, 5].map(n => (
@@ -53,6 +53,9 @@ export default function SerieTv() {
                                                         ? "bi bi-star-fill text-warning" : "bi bi-star text-secondary"}>
                                                     </i>
                                                 ))}
+                                        </p>
+                                        <p className='card-text'>
+                                            Trama: {tv.overview}
                                         </p>
                                     </div>
                                 </div>
