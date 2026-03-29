@@ -51,13 +51,13 @@ export default function Film() {
             </form>
                 <div className='container-flex bg-danger'>
                     <div className='row row-cols-sm-2 row-cols-md-5 g-4'>
+                        {/*aggiunte delle classi : movie-card e movie-info per l'overlay in hover della card*/}
                         {movies.map(movie => (
                             <div className='col' key={movie.id}>
-                                <div className='card h-100 bg-black'>
-                                    <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt='locandina'/>
-                                    <div class='card-body text-white'>
-                                        <h3 className='card-title'>{movie.title}</h3>
-                                        <p className='card-text'>Titolo originale: {movie.original_title}</p>
+                                <div className='movie-card card h-100 bg-black position-relative'>
+                                    <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}` : `https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png`} alt='locandina'/>
+                                    <div className='movie-info card-img-overlay d-flex flex-column justify-content-center text-white'>
+                                        <p className='card-title'>titolo: {movie.title}</p>
                                         <p className='card-text'>Lingua: {getFlag(movie.original_language)}</p>
                                         <p className='card-text'>
                                             Voto: 
@@ -69,6 +69,9 @@ export default function Film() {
                                                         ? "bi bi-star-fill text-warning" : "bi bi-star text-secondary"}>
                                                     </i>
                                                 ))}
+                                        </p>
+                                        <p className='card-text'>
+                                            Trama: {movie.overview}
                                         </p>
                                     </div>
                                 </div>

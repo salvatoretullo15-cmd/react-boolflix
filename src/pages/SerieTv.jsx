@@ -48,9 +48,6 @@ export default function SerieTv() {
                                         <p>Lingua:{getFlag(tv.original_language)} {tv.original_language}</p>
                                         <p className='card-text'>
                                             Voto: 
-                                                {/*creazione di un arrey con numeri da 1 a 5 e ci cicliamo dentro con il map*/}
-                                                {/*per ogni numero facciamo un confronto con il voto del film diviso 2 e arrotondato per eccesso*/}
-                                                {/*utilizzo del ternario per decidere se mettere la stella piena o vuota in base al voto del film*/}
                                                 {[1, 2, 3, 4, 5].map(n => (
                                                     <i key={n} className={n <= Math.ceil(tv.vote_average / 2) 
                                                         ? "bi bi-star-fill text-warning" : "bi bi-star text-secondary"}>
