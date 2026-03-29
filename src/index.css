@@ -8,6 +8,10 @@
   border-radius: 2px;    
 }
 
+.navbar-brand {
+  width: 120px;
+}
+
 .lang-text {
   font-weight: bold;
   text-transform: uppercase;
