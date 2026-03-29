@@ -31,7 +31,7 @@ export default function SerieTv() {
     }    
 
     return(
-        <div className='text-center'>
+        <div className='page bg-black text-center'>
             <form className='bg-black border border-black' role='search' onSubmit={handleSearch}>           
                 <input className='ms-3 mt-3 mb-3' type='text' value={searchTv} onChange={(e) => setSearchTv(e.target.value)} placeholder='Cerca un serie tv...'/>
                 <button className='btn btn-dark ms-2' type='submit'>Cerca</button>

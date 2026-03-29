@@ -43,7 +43,7 @@ export default function Film() {
     }
 
     return(
-        <div className='text-center'>
+        <div className='page bg-black text-center'>
             {/*implementazione del form di ricerca con utilizzo del ciclo map*/}
             <form className='bg-black border border-black' role='search' onSubmit={handleSearch}>           
                 <input className='ms-3 mt-3 mb-3' type='text' value={searchFilm} onChange={(e) => setSearchFilm(e.target.value)} placeholder='Cerca un film...'/>

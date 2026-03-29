@@ -38,3 +38,7 @@
 p {
     font-size: smaller;
 }
+
+.page {
+    min-height: 900px;
+}
